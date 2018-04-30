@@ -1,0 +1,215 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      7743,        207]
+NotebookOptionsPosition[      7309,        190]
+NotebookOutlinePosition[      7662,        206]
+CellTagsIndexPosition[      7619,        203]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Panel", "[", 
+  RowBox[{"DynamicModule", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"let", "=", "\"\<\>\""}], ",", 
+      RowBox[{"len", "=", "3"}], ",", "x"}], "}"}], ",", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<Mathematica Word Game Solver:\>\"", ",", "Bold"}], 
+         "]"}], "]"}], ",", 
+       RowBox[{"InputField", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "[", "let", "]"}], ",", "String", ",", 
+         RowBox[{"ContinuousAction", "\[Rule]", "True"}]}], "]"}], ",", 
+       RowBox[{"Text", "[", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<Length of word:\>\"", ",", "Bold"}], "]"}], "]"}], ",", 
+       
+       RowBox[{"InputField", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "[", "len", "]"}], ",", "Number"}], "]"}], ",", 
+       RowBox[{"RadioButtonBar", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "[", "x", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<CommonWords\>\"", ",", "\"\<KnownWords\>\""}], "}"}]}],
+         "]"}], ",", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{
+         RowBox[{"Sort", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"StringJoin", "/@", 
+             RowBox[{"Permutations", "[", 
+              RowBox[{
+               RowBox[{"Characters", "[", "let", "]"}], ",", "len"}], "]"}]}],
+             "\[Intersection]", 
+            RowBox[{"WordList", "[", "x", "]"}]}], ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Length", "[", 
+              RowBox[{"Characters", "[", "#1", "]"}], "]"}], ">", 
+             RowBox[{"Length", "[", 
+              RowBox[{"Characters", "[", "#2", "]"}], "]"}]}], "&"}]}], "]"}],
+          "//", "Column"}], "]"}]}], "}"}], "]"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQvclOZKHmzteOH/KmbQDRutVC+0F0WDjnaTB9edpl
+EM0z+d5NEN2ZU3kfRD/J6ALTrAGTXoJo8Z2+b0D0qne5H0H0Lua5/0H0m4d/
+mLWAdP8/PhYQ7eR0hQdENxXx84Pof/81DUF0X4MemNbZrh0MoqMvPowC0TXH
+xJNA9IltP1JBdExd2EwQzRZ5CUyH/a2bD6LFP84D0zM/qiwH0U+yileD6WtC
+90H048Ddj0G08GxjdW0gfcetWBtEH/hRYwiiC44JmoPokLqpHiD6v6+LD4hW
+K5w7FUSzRd8B05cedq4A0VJurqtAdEtDw25zIM0i1wymAY3QrdI=
+  
+  "],ExpressionUUID->"6f9c063c-4ab3-4a41-8f3a-53a477d5df51"],
+
+Cell[BoxData[
+ PanelBox[
+  DynamicModuleBox[{$CellContext`let$$ = "rearranging", $CellContext`len$$ = 
+   9, $CellContext`x$$ = "CommonWords"}, 
+   TagBox[GridBox[{
+      {
+       InterpretationBox[Cell[BoxData[
+         FormBox[
+          StyleBox["\<\"Mathematica Word Game Solver:\"\>",
+           StripOnInput->False,
+           FontWeight->Bold], TextForm]], "InlineText",ExpressionUUID->
+         "f47cb4e2-a1d4-4cb3-bd4f-1e79fe7b3d7a"],
+        Text[
+         Style["Mathematica Word Game Solver:", Bold]]]},
+      {
+       InputFieldBox[Dynamic[$CellContext`let$$], String,
+        ContinuousAction->True]},
+      {
+       InterpretationBox[Cell[BoxData[
+         FormBox[
+          StyleBox["\<\"Length of word:\"\>",
+           StripOnInput->False,
+           FontWeight->Bold], TextForm]], "InlineText",ExpressionUUID->
+         "5fb3ed29-faba-4dec-a1d5-f3fb572f645f"],
+        Text[
+         Style["Length of word:", Bold]]]},
+      {
+       InputFieldBox[Dynamic[$CellContext`len$$], Number]},
+      {
+       InterpretationBox[
+        StyleBox[
+         RowBox[{GridBox[{
+            {
+             RadioButtonBox[Dynamic[$CellContext`x$$], {"CommonWords"},
+              DefaultBaseStyle->"RadioButtonBar"], 
+             StyleBox["\<\"CommonWords\"\>", "RadioButtonBarLabel",
+              StripOnInput->False]}
+           },
+           AutoDelete->False,
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.21]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}], "  ", GridBox[{
+            {
+             RadioButtonBox[Dynamic[$CellContext`x$$], {"KnownWords"},
+              DefaultBaseStyle->"RadioButtonBar"], 
+             StyleBox["\<\"KnownWords\"\>", "RadioButtonBarLabel",
+              StripOnInput->False]}
+           },
+           AutoDelete->False,
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.21]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}]}], "Deploy"],
+        RadioButtonBar[
+         Dynamic[$CellContext`x$$], {"CommonWords", "KnownWords"}]]},
+      {
+       DynamicBox[ToBoxes[
+         Column[
+          Sort[
+           Intersection[
+            Map[StringJoin, 
+             Permutations[
+              Characters[$CellContext`let$$], $CellContext`len$$]], 
+            WordList[$CellContext`x$$]], Length[
+             Characters[#]] > Length[
+             Characters[#2]]& ]], StandardForm],
+        ImageSizeCache->{45., {514., 519.}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Column"],
+   DynamicModuleValues:>{}]]], "Output",
+ CellChangeTimes->{{3.720957520143627*^9, 3.720957532125341*^9}, {
+   3.72095760378857*^9, 3.720957649172974*^9}, 3.720957692949411*^9, 
+   3.720957796119996*^9, {3.720957837272153*^9, 3.7209579492460012`*^9}, 
+   3.72095798483817*^9, {3.720958056615423*^9, 3.72095807292491*^9}, {
+   3.720958345888885*^9, 3.72095834734085*^9}, {3.720958622404498*^9, 
+   3.720958679463195*^9}, 3.720958746704962*^9, 3.720959183999641*^9, 
+   3.720959229430895*^9, {3.720959301128726*^9, 3.720959325039606*^9}, {
+   3.7209603194087*^9, 3.720960347870844*^9}, {3.720960400652266*^9, 
+   3.72096045093507*^9}, {3.72096058236444*^9, 3.720960611225232*^9}, 
+   3.7209611992400923`*^9, {3.720961349809889*^9, 3.720961362537114*^9}, 
+   3.720986078398883*^9},ExpressionUUID->"abce4d8b-5930-48e8-adda-\
+6f6616541484"]
+}, Open  ]]
+},
+WindowSize->{808, 651},
+WindowMargins->{{Automatic, 0}, {Automatic, 47}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[583, 22, 2335, 58, 157, "Input",ExpressionUUID->"6f9c063c-4ab3-4a41-8f3a-53a477d5df51"],
+Cell[2921, 82, 4372, 105, 1179, "Output",ExpressionUUID->"abce4d8b-5930-48e8-adda-6f6616541484"]
+}, Open  ]]
+}
+]
+*)
+
